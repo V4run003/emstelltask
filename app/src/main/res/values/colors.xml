@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#14a4ff</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="background">#FFFFFFFF</color>
+    <color name="foreground">#000000</color>
+    <color name="faded_foreground">#c3e7ff</color>
+    <color name="icon_color_bottom">#000000</color>
+
+    <color name="selected_color">#c3e7ff</color>
+    <color name="selected_color_recycler">#4DC3E7FF</color>
+
+    <color name="bottom_nav_bg">#f1f4fb</color>
+
+    <color name="icon_tint">#000f27</color>
+    <color name="popup_edittxt_bg">#77C3E7FF</color>
+    <color name="text_color">#1f1f1f</color>
+    <color name="bottom_nav_text_color">#1f1f1f</color>
+    <color name="bottom_icon_color">#1f1f1f</color>
+    <color name="text_color_medium_light">#3e403f</color>
+    <color name="text_color_light">#747675</color>
+    <color name="text_color_highlight">#0b57cf</color>
+    <color name="text_color_negative">#FFFFFF</color>
+    <color name="color_on_textview">#454746</color>
+
+    <color name="cardview_bg">#f6f7fb</color>
+
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="edit_text_bg">#eef2fb</color>
+
+</resources>
