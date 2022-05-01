@@ -3,8 +3,10 @@ package com.nxet.emstelltask.Uils
 import com.nxet.emstelltask.DataClasses.Clinic
 import com.nxet.emstelltask.DataClasses.Doctor
 import com.nxet.emstelltask.DataClasses.MainData
+import com.nxet.emstelltask.DataClasses.new
 import retrofit2.Response
 import retrofit2.http.*
+import java.io.File
 
 interface DataApi {
 
@@ -14,6 +16,11 @@ interface DataApi {
         @Query("token") token: String,
         @Query("user_id") userID: Int
     ): Response<MainData>
+
+
+    @GET("/starzz.json")
+    suspend fun getAll(
+       ): Response<new>
 
     @FormUrlEncoded
     @POST("/mobileapi/master/get_clinic_detail")

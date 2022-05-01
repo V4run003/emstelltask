@@ -6,12 +6,15 @@ import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.navigation.NavigationBarView
 import com.nxet.emstelltask.DataClasses.MainData
+import com.nxet.emstelltask.DataClasses.new
 import com.nxet.emstelltask.Fragments.ClinicsFragment
 import com.nxet.emstelltask.Fragments.DoctorsFragment
+import com.nxet.emstelltask.Uils.RetrofitInstance
 import com.nxet.emstelltask.databinding.ActivityMainBinding
 import retrofit2.HttpException
 import retrofit2.Response
@@ -26,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var container : FrameLayout
+    private lateinit var response : Response<new>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,12 +55,25 @@ class MainActivity : AppCompatActivity() {
         ).commit()
 
 
+        lifecycleScope.launchWhenCreated {
+            response = try {
+                RetrofitInstance.api.getAll()
+            } catch (e : IOException) {
+                Log.e(TAG,e.message.toString())
+                return@launchWhenCreated
+            } catch (e : HttpException){
+                Log.e(TAG,e.message().toString())
+                return@launchWhenCreated
 
+            }
+            if (response.isSuccessful && response.body() !=null){
+                val resp = response.raw().toString()
+                Log.e("response",response.body().toString())
+                Toast.makeText(this@MainActivity,"response : $resp", Toast.LENGTH_SHORT).show()
 
+            }
 
-
-
-
+        }
 
     }
 

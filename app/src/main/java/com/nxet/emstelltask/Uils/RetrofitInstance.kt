@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitInstance {
     val api : DataApi by lazy {
         Retrofit.Builder()
-            .baseUrl("https://clinixbooking.com/")
+            .baseUrl("http://173.255.225.103")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
             .build()
